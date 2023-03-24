@@ -8,7 +8,7 @@
     <img alt="zar" :src="getImage(0)">
   </div>
   <div id="total">
-<span>Toplam: {{ total }}</span><br>
+    <span>Toplam: {{ total }}</span><br>
     <span id="lucky-pic" v-if="!gifIsActive && (firstDice === secondDice)"> Çift Attın Tekrar At</span>
   </div>
   <button id="dice-button" @click="rollDice">Zarları Salla</button>
@@ -36,7 +36,7 @@ export default {
     },
   },
   mounted() {
-    this.total =this.firstDice + this.secondDice;
+    this.total = this.firstDice + this.secondDice;
   },
 
   methods: {
@@ -54,7 +54,7 @@ export default {
 
       await new Promise(resolve => setTimeout(resolve, 1200));
 
-      this.total =this.firstDice + this.secondDice;
+      this.total = this.firstDice + this.secondDice;
 
       this.showGif = false;
     },
@@ -73,26 +73,29 @@ ul {
   list-style-type: none;
   padding: 0;
 }
- #dice-button {
-   font-size: 24px;
-   width: 50%;
-   padding: 12px 24px;
-   margin-top: 15px;
-   background-color: #008CBA;
-   color: white;
-   border: none;
-   border-radius: 15%;
-   cursor: pointer;
- }
+
+#dice-button {
+  font-size: 24px;
+  width: 50%;
+  padding: 12px 24px;
+  margin-top: 15px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 15%;
+  cursor: pointer;
+}
 
 #lucky-pic {
   color: darkred;
 }
+
 #total {
   font-size: 24px;
   margin-top: 15px;
   font-weight: bold;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
