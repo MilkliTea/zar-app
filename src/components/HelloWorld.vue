@@ -9,7 +9,7 @@
   </div>
   <div id="total">
     <span>Toplam: {{ total }}</span><br>
-    <span id="lucky-pic" v-if="!gifIsActive && (firstDice === secondDice)"> Çift Attın Tekrar At</span>
+    <span id="lucky-pic" v-if="!gifIsActive && (firstDice === secondDice)">Çift Attın Tekrar At</span>
   </div>
   <button id="dice-button" @click="rollDice">Zarları Salla</button>
 </template>
@@ -17,10 +17,6 @@
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  },
-
   data() {
     return {
       firstDice: Math.floor(Math.random() * 6) + 1,
@@ -42,9 +38,10 @@ export default {
   methods: {
     getImage(diceNumber) {
       if (diceNumber === 0) {
-        return require("../assets/zar.gif");
 
+        return require("../assets/zar.gif");
       }
+
       return require("../assets/" + diceNumber + ".png");
     },
     async rollDice() {
