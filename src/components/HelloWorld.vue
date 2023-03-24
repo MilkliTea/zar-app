@@ -8,9 +8,10 @@
     <img alt="zar" :src="getImage(0)">
   </div>
   <div id="total">
-<span>Toplam: {{ total }}</span>
+<span>Toplam: {{ total }}</span><br>
+    <span id="lucky-pic" v-if="!gifIsActive && (firstDice === secondDice)"> Çift Attın Tekrar At</span>
   </div>
-  <button id="dice-button" @click="rollDice">Zar At</button>
+  <button id="dice-button" @click="rollDice">Zarları Salla</button>
 </template>
 
 <script>
@@ -74,6 +75,7 @@ ul {
 }
  #dice-button {
    font-size: 24px;
+   width: 50%;
    padding: 12px 24px;
    margin-top: 15px;
    background-color: #008CBA;
@@ -83,6 +85,9 @@ ul {
    cursor: pointer;
  }
 
+#lucky-pic {
+  color: darkred;
+}
 #total {
   font-size: 24px;
   margin-top: 15px;
