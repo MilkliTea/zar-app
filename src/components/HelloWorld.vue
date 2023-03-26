@@ -48,9 +48,9 @@ export default {
       this.showGif = true;
       this.firstDice = Math.floor(Math.random() * 6) + 1;
       this.secondDice = Math.floor(Math.random() * 6) + 1;
-
+      navigator.vibrate(1200);
       await new Promise(resolve => setTimeout(resolve, 1200));
-
+      
       this.total = this.firstDice + this.secondDice;
 
       this.showGif = false;
